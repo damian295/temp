@@ -6,22 +6,19 @@
 <title>Visor 360 Lumion</title>
 <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 <style>
-body{margin:0;background:#000;color:#fff;font-family:Arial,sans-serif}
-#panel{position:fixed;top:10px;left:10px;right:10px;z-index:10;background:rgba(0,0,0,.72);padding:10px;border-radius:10px}
+body{margin:0;background:#000;color:white;font-family:Arial,sans-serif}
+#panel{position:fixed;top:10px;left:10px;right:10px;z-index:9999;background:rgba(0,0,0,.75);padding:10px;border-radius:10px;font-size:14px}
 button{padding:10px;border:0;border-radius:8px;font-weight:bold}
 </style>
 </head>
 <body>
 <div id="panel">
-  <button onclick="document.getElementById('panel').style.display='none'">OCULTAR</button>
-  <div>Celular horizontal. Tocá el botón VR de la escena.</div>
+<button onclick="document.getElementById('panel').style.display='none'">OCULTAR</button>
+<div>Si ves esto pero el fondo queda negro: la imagen no cargó. Imagen usada: <b>Panorama.jpg</b></div>
 </div>
-<a-scene vr-mode-ui="enabled: true">
-  <a-assets>
-    <img id="pano" src="Panorama.jpg">
-  </a-assets>
-  <a-sky src="#pano" rotation="0 -90 0"></a-sky>
-  <a-entity camera look-controls position="0 1.6 0"></a-entity>
+<a-scene background="color: #111" vr-mode-ui="enabled: true">
+<a-sky src="Panorama.jpg" rotation="0 -90 0"></a-sky>
+<a-entity camera look-controls position="0 1.6 0"></a-entity>
 </a-scene>
 </body>
 </html>
